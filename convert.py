@@ -8,6 +8,7 @@ original_ratio = 16/9
 
 
 def create_cfg(filename):
+    filename = filename.rsplit('/', 1)[1]
     cfg_file = filename + ".cfg"
     with open(cfg_file, 'w') as f:
         f.write("""
@@ -65,6 +66,6 @@ def resize(filelist):
 
                     create_cfg(filename)
 
-filelist = os.listdir( dir )
+filelist = os.listdir(dir)
 resize(filelist)
 resize_with_crop(filelist)
